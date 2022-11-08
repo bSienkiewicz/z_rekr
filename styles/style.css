@@ -28,6 +28,28 @@ body {
   color: #000 !important;
 }
 
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
 /* Navbar */
 #Nav-main {
   max-width: 100%;
@@ -66,9 +88,6 @@ body {
   color: #5e5e5e;
 }
 
-.breadcrumb-content {
-  padding: 0 80px 0 80px;
-}
 .breadcrumb-content ul li + li:before {
   padding: 0 3px;
   color: #5e5e5e;
@@ -80,31 +99,36 @@ body {
 
 /* Login section */
 #Login {
-  margin: 100px 80px 100px 80px;
+  padding: 100px 0 100px 0;
 }
 #Login button {
   padding: 10px 10px;
 }
-#Login h1 {
+#Login .login-header h1 {
   position: relative;
   margin: 0;
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 900;
   color: #000;
 }
-#Login p {
+#Login .login-header p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
 }
-#Login h1:before {
+#Login .login-header h1:before {
   content: "";
   position: absolute;
-  width: 60px;
-  height: 3px;
+  width: 70px;
+  height: 5px;
   background-color: #046db2;
-  bottom: 5px;
+  bottom: 8px;
   z-index: -1;
+}
+@media screen and (max-width: 768px) {
+  #Login .login-header {
+    margin-left: 20px;
+  }
 }
 #Login .login-container {
   box-sizing: border-box;
@@ -139,8 +163,8 @@ body {
   flex-direction: column;
 }
 #Login .login-container form .form-group label {
+  font-size: 18px;
   margin-bottom: 5px;
-  font-size: 14px;
 }
 #Login .login-container form .form-group input {
   padding: 5px 10px;
@@ -151,6 +175,7 @@ body {
   margin-top: 20px;
   align-items: center;
   display: flex;
+  font-size: 18px;
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
@@ -163,7 +188,6 @@ body {
   width: 50%;
   font-weight: 400;
   color: #5e5e5e;
-  font-size: 14px;
 }
 @media screen and (max-width: 768px) {
   #Login .login-container form .form-submit a {
@@ -174,6 +198,7 @@ body {
 #Login .login-container form .form-submit button {
   width: 50%;
   border-radius: 3px;
+  font-size: 18px;
   color: white;
   background-color: #5e5e5e;
   border: none;
@@ -187,7 +212,6 @@ body {
 }
 #Login .register-cta {
   box-sizing: border-box;
-  padding: 0 40px 0 40px;
   width: 40%;
   height: auto;
   display: flex;
@@ -197,22 +221,19 @@ body {
 }
 @media screen and (max-width: 768px) {
   #Login .register-cta {
+    padding: 0 10px 0 10px;
     width: 100%;
+    height: 100px;
   }
-}
-#Login .register-cta h2 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 900;
-  color: #000;
 }
 #Login .register-cta p {
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   color: #000;
 }
 #Login .register-cta button {
-  width: 80%;
+  width: 65%;
+  font-size: 18px;
   border-radius: 3px;
   color: white;
   background-color: #5e5e5e;

@@ -27,8 +27,8 @@
         </div>
       </div>
     </nav>
-    <div class="breadcrumb container">
-      <div class="breadcrumb-content">
+    <div class="breadcrumb">
+      <div class="breadcrumb-content container">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li>Login</li>
@@ -36,21 +36,36 @@
       </div>
     </div>
     <section id="Login" class="container">
-      <h1>Login</h1>
-      <p>To access your account</p>
+      <div class="login-header">
+        <h1>Login</h1>
+        <p>To access your account</p>
+      </div>
       <div class="login-container">
         <form>
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="Username" />
+            <input
+              type="text"
+              name="username"
+              id="Username"
+              required
+              maxlength="100"
+            />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="Email" />
+            <input type="email" name="email" id="Email" required />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="Password" />
+            <input
+              type="password"
+              name="password"
+              id="Password"
+              required
+              minlength="7"
+              maxlength="25"
+            />
           </div>
           <div class="form-submit">
             <a href="">Forgot Password?</a>

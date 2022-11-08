@@ -36,6 +36,22 @@ body {
   color: #000 !important;
 }
 
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
+
 /* Navbar */
 
 #Nav-main {
@@ -79,8 +95,6 @@ body {
 }
 
 .breadcrumb-content {
-  padding: 0 80px 0 80px;
-
   ul li + li:before {
     padding: 0 3px;
     color: $dgray;
@@ -94,31 +108,37 @@ body {
 /* Login section */
 
 #Login {
-  margin: 100px 80px 100px 80px;
+  padding: 100px 0 100px 0;
   button {
     padding: 10px 10px;
   }
-  h1 {
-    position: relative;
-    margin: 0;
-    font-size: 30px;
-    font-weight: 900;
-    color: #000;
-  }
-  p {
-    margin: 0;
-    font-size: 16px;
-    color: #000;
-  }
-  h1:before {
-    // underline the h1
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 3px;
-    background-color: $dblue;
-    bottom: 5px;
-    z-index: -1;
+  .login-header {
+    h1 {
+      position: relative;
+      margin: 0;
+      font-size: 38px;
+      font-weight: 900;
+      color: #000;
+    }
+    p {
+      margin: 0;
+      font-size: 18px;
+      color: #000;
+    }
+    h1:before {
+      // underline the h1
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 5px;
+      background-color: $dblue;
+      bottom: 8px;
+      z-index: -1;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-left: 20px;
+    }
   }
 
   .login-container {
@@ -150,8 +170,8 @@ body {
         display: flex;
         flex-direction: column;
         label {
+          font-size: 18px;
           margin-bottom: 5px;
-          font-size: 14px;
         }
         input {
           padding: 5px 10px;
@@ -164,6 +184,8 @@ body {
         margin-top: 20px;
         align-items: center;
         display: flex;
+
+        font-size: 18px;
         justify-content: space-between;
         @media screen and (max-width: 768px) {
           flex-direction: column-reverse;
@@ -174,7 +196,6 @@ body {
           width: 50%;
           font-weight: 400;
           color: $dgray;
-          font-size: 14px;
           @media screen and (max-width: 768px) {
             margin-top: 10px;
             text-align: center;
@@ -184,6 +205,7 @@ body {
         button {
           width: 50%;
           border-radius: 3px;
+          font-size: 18px;
           color: white;
           background-color: $dgray;
           border: none;
@@ -208,21 +230,18 @@ body {
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 768px) {
+      padding: 0 10px 0 10px;
       width: 100%;
-    }
-    h2 {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 900;
-      color: #000;
+      height: 100px;
     }
     p {
       margin: 0;
-      font-size: 14px;
+      font-size: 18px;
       color: #000;
     }
     button {
-      width: 80%;
+      width: 65%;
+      font-size: 18px;
       border-radius: 3px;
       color: white;
       background-color: $dgray;
