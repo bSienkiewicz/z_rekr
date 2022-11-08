@@ -99,6 +99,7 @@ body {
 
 /* Login section */
 #Login {
+  z-index: 10;
   padding: 100px 0 100px 0;
 }
 #Login button {
@@ -167,9 +168,10 @@ body {
   margin-bottom: 5px;
 }
 #Login .login-container form .form-group input {
-  padding: 5px 10px;
+  padding: 10px 10px;
   border: 1px solid #dfdfdf;
   border-radius: 3px;
+  font-size: 18px;
 }
 #Login .login-container form .form-submit {
   margin-top: 20px;
@@ -212,12 +214,8 @@ body {
 }
 #Login .register-cta {
   box-sizing: border-box;
+  position: relative;
   width: 40%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 @media screen and (max-width: 768px) {
   #Login .register-cta {
@@ -226,12 +224,41 @@ body {
     height: 100px;
   }
 }
-#Login .register-cta p {
+#Login .register-cta .container {
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+#Login .register-cta .container ::before {
+  content: "";
+  position: absolute;
+  height: 130%;
+  width: 80%;
+  z-index: -1;
+  background-color: #046db2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: skew(-5deg) rotate(-5deg);
+}
+@media screen and (max-width: 768px) {
+  #Login .register-cta .container ::before {
+    width: 100%;
+    transform: translateY(40px) skew(-5deg) rotate(-5deg);
+  }
+}
+#Login .register-cta .container p {
   margin: 0;
   font-size: 18px;
   color: #000;
 }
-#Login .register-cta button {
+#Login .register-cta .container button {
   width: 65%;
   font-size: 18px;
   border-radius: 3px;
@@ -242,7 +269,7 @@ body {
   cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-  #Login .register-cta button {
+  #Login .register-cta .container button {
     width: 100%;
   }
 }

@@ -108,6 +108,7 @@ body {
 /* Login section */
 
 #Login {
+  z-index: 10;
   padding: 100px 0 100px 0;
   button {
     padding: 10px 10px;
@@ -174,9 +175,10 @@ body {
           margin-bottom: 5px;
         }
         input {
-          padding: 5px 10px;
+          padding: 10px 10px;
           border: 1px solid #dfdfdf;
           border-radius: 3px;
+          font-size: 18px;
         }
       }
       .form-submit {
@@ -223,33 +225,56 @@ body {
   .register-cta {
     // container for the register CTA
     box-sizing: border-box;
+    position: relative;
     width: 40%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     @media screen and (max-width: 768px) {
       padding: 0 10px 0 10px;
       width: 100%;
       height: 100px;
     }
-    p {
-      margin: 0;
-      font-size: 18px;
-      color: #000;
-    }
-    button {
-      width: 65%;
-      font-size: 18px;
-      border-radius: 3px;
-      color: white;
-      background-color: $dgray;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      @media screen and (max-width: 768px) {
-        width: 100%;
+    .container {
+      height: 100%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      ::before {
+        content: "";
+        position: absolute;
+        height: 130%;
+        width: 80%;
+        z-index: -1;
+        background-color: $dblue;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: skew(-5deg) rotate(-5deg);
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          transform: translateY(40px) skew(-5deg) rotate(-5deg);
+        }
+      }
+      p {
+        margin: 0;
+        font-size: 18px;
+        color: #000;
+      }
+      button {
+        width: 65%;
+        font-size: 18px;
+        border-radius: 3px;
+        color: white;
+        background-color: $dgray;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
       }
     }
   }
