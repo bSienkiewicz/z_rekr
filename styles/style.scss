@@ -11,7 +11,6 @@ $dblue: #046db2;
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
   font-weight: bold;
   color: #333;
   line-height: 1.5;
@@ -37,8 +36,9 @@ body {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  // general container class to center content on page responsively
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 768px) {
@@ -57,8 +57,12 @@ body {
 #Nav-main {
   max-width: 100%;
   background-color: $lgray;
-  padding: 0 100px 0 100px;
+  padding: 0px 100px 0 100px;
   border-bottom: 1px solid $lgray;
+  @media screen and (max-width: 768px) {
+    padding: 0px 00px 0 00px;
+  }
+
   ul {
     display: flex;
     list-style: none;
@@ -71,7 +75,7 @@ body {
     background-color: $awhite;
   }
   li {
-    padding: 10px 20px 10px 20px;
+    padding: 0.6rem 1.5rem 0.6rem 1.5rem;
   }
   a {
     text-decoration: none;
@@ -96,6 +100,7 @@ body {
 
 .breadcrumb-content {
   ul li + li:before {
+    // adds a '/' before each li except the first
     padding: 0 3px;
     color: $dgray;
     content: "/";
@@ -109,7 +114,7 @@ body {
 
 #Login {
   z-index: 10;
-  padding: 100px 0 100px 0;
+  padding: 8rem 0 8rem 0;
   button {
     padding: 10px 10px;
   }
@@ -117,13 +122,13 @@ body {
     h1 {
       position: relative;
       margin: 0;
-      font-size: 38px;
+      font-size: 2.3rem;
       font-weight: 900;
       color: #000;
     }
     p {
       margin: 0;
-      font-size: 18px;
+      font-size: 1.1rem;
       color: #000;
     }
     h1:before {
@@ -138,6 +143,7 @@ body {
     }
 
     @media screen and (max-width: 768px) {
+      // add margin to section on mobile
       margin-left: 20px;
     }
   }
@@ -156,6 +162,7 @@ body {
     }
 
     form {
+      // left/top side of the login section
       box-sizing: border-box;
       padding: 20px;
       width: 60%;
@@ -175,19 +182,20 @@ body {
           margin-bottom: 5px;
         }
         input {
-          padding: 10px 10px;
+          padding: 0.6rem 0.6rem;
           border: 1px solid #dfdfdf;
-          border-radius: 3px;
-          font-size: 18px;
+          border-radius: 5px;
+          font-size: 1.3rem;
+          -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.129);
+          box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.129);
         }
       }
       .form-submit {
-        // submit button and password reset link
-        margin-top: 20px;
+        // submit button and password reset link are contained in this div
+        margin-top: 1.3rem;
         align-items: center;
         display: flex;
-
-        font-size: 18px;
+        font-size: 1.2rem;
         justify-content: space-between;
         @media screen and (max-width: 768px) {
           flex-direction: column-reverse;
@@ -206,13 +214,6 @@ body {
 
         button {
           width: 50%;
-          border-radius: 3px;
-          font-size: 18px;
-          color: white;
-          background-color: $dgray;
-          border: none;
-          font-weight: bold;
-          cursor: pointer;
           @media screen and (max-width: 768px) {
             // stretch the button to 100% width on mobile
             width: 100%;
@@ -224,60 +225,76 @@ body {
 
   .register-cta {
     // container for the register CTA
+    padding: 0 1.2rem 0 1.2rem;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 40%;
+    font-size: 18px;
     @media screen and (max-width: 768px) {
-      padding: 0 10px 0 10px;
       width: 100%;
       height: 100px;
     }
-    .container {
-      height: 100%;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      ::before {
-        content: "";
-        position: absolute;
-        height: 130%;
+
+    p {
+      // register CTA text
+      margin: 0;
+      color: #000;
+    }
+    button {
+      // register button
+      width: 65%;
+      @media screen and (max-width: 768px) {
+        // stretch the button to 100% width on mobile
+        width: 100%;
+      }
+    }
+    ::before {
+      // the blue background rhombus
+      content: "";
+      position: absolute;
+      height: 120%;
+      width: 60%;
+      z-index: -1;
+      background-color: $dblue;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      -webkit-transform: skew(-5deg) rotate(-5deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      transform: skew(-5deg) rotate(-5deg);
+      @media screen and (max-width: 768px) {
         width: 80%;
-        z-index: -1;
-        background-color: $dblue;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        transform: skew(-5deg) rotate(-5deg);
-        @media screen and (max-width: 768px) {
-          width: 100%;
-          transform: translateY(40px) skew(-5deg) rotate(-5deg);
-        }
+        -webkit-transform: translateY(40px) skew(-5deg) rotate(-5deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+        transform: translateY(40px) skew(-5deg) rotate(-5deg);
       }
-      p {
-        margin: 0;
-        font-size: 18px;
-        color: #000;
-      }
-      button {
-        width: 65%;
-        font-size: 18px;
-        border-radius: 3px;
-        color: white;
-        background-color: $dgray;
-        border: none;
-        font-weight: bold;
-        cursor: pointer;
-        @media screen and (max-width: 768px) {
-          width: 100%;
-        }
-      }
+    }
+  }
+  button {
+    border-radius: 3px;
+    font-size: 18px;
+    color: white;
+    background-color: $dgray;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: #3b3b3b !important;
     }
   }
 }
 
-/* Media-query */
+/* Footer */
+footer {
+  background-color: $dgray;
+  margin-top: 5rem;
+  width: 100vw;
+  height: 80px;
+  font-size: 18px;
+}
