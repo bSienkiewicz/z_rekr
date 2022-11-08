@@ -69,6 +69,13 @@ body {
     margin: 0;
     padding: 0;
   }
+  .nav-items {
+    a {
+      &:hover {
+        background-color: $lgray;
+      }
+    }
+  }
   .nav-content {
     display: flex;
     justify-content: space-between;
