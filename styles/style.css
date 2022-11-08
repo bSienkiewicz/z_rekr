@@ -1,0 +1,103 @@
+/* Root & Import */
+
+:root {
+  --lgray: #9e9d9d;
+  --dgray: #5e5e5e;
+  --awhite: #ebebeb;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* Body */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* General classes */
+
+.bg-dark {
+  background-color: var(--dgray);
+}
+
+.bg-dark > * {
+  color: white !important;
+}
+
+.bg-light {
+  background-color: var(--lgray);
+}
+.bg-light > * {
+  color: #000 !important;
+}
+
+/* Navbar */
+
+nav {
+  max-width: 100%;
+  background-color: var(--lgray);
+  padding: 0 100px 0 100px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--awhite);
+}
+
+nav li {
+  padding: 10px 20px 10px 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dgray);
+}
+
+/* Breadcrumbs */
+
+.breadcrumb {
+  background-color: var(--awhite);
+}
+
+.breadcrumb ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--dgray);
+}
+
+.breadcrumb-content {
+  padding: 0 80px 0 80px;
+}
+
+.breadcrumb-content ul li + li:before {
+  padding: 3px;
+  color: var(--dgray);
+  content: "/";
+}
+
+.breadcrumb-content a {
+  color: #5a92c8;
+}
+
+/* Media-query */
+
+@media only screen and (max-width: 750px) {
+  nav {
+  }
+}
