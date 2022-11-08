@@ -51,6 +51,9 @@ body {
 
 /* Navbar */
 #Nav-main {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   max-width: 100%;
   background-color: #cecdcd;
   padding: 0px 100px 0 100px;
