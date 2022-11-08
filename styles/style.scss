@@ -1,0 +1,240 @@
+/* Root & Import */
+
+$lgray: #cecdcd;
+$dgray: #5e5e5e;
+$awhite: #ebebeb;
+$dblue: #046db2;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+/* Body */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* General classes */
+
+.bg-dark {
+  background-color: $dgray;
+}
+
+.bg-dark > * {
+  color: white !important;
+}
+
+.bg-light {
+  background-color: $lgray;
+}
+.bg-light > * {
+  color: #000 !important;
+}
+
+/* Navbar */
+
+#Nav-main {
+  max-width: 100%;
+  background-color: $lgray;
+  padding: 0 100px 0 100px;
+  border-bottom: 1px solid $lgray;
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: $awhite;
+  }
+  li {
+    padding: 10px 20px 10px 20px;
+  }
+  a {
+    text-decoration: none;
+    color: $dgray;
+  }
+}
+
+/* Breadcrumbs */
+
+.breadcrumb {
+  background-color: $awhite;
+
+  ul {
+    // target all ul inside the breadcrumb
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: $dgray;
+  }
+}
+
+.breadcrumb-content {
+  padding: 0 80px 0 80px;
+
+  ul li + li:before {
+    padding: 0 3px;
+    color: $dgray;
+    content: "/";
+  }
+  a {
+    color: #5a92c8;
+  }
+}
+
+/* Login section */
+
+#Login {
+  margin: 100px 80px 100px 80px;
+  button {
+    padding: 10px 10px;
+  }
+  h1 {
+    position: relative;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 900;
+    color: #000;
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+  }
+  h1:before {
+    // underline the h1
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: $dblue;
+    bottom: 5px;
+    z-index: -1;
+  }
+
+  .login-container {
+    // container for the login form
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background: #fafafa;
+    border: 1px solid #dfdfdf;
+    width: 100%;
+    flex-direction: row;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    form {
+      box-sizing: border-box;
+      padding: 20px;
+      width: 60%;
+      background-color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      .form-group {
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        label {
+          margin-bottom: 5px;
+          font-size: 14px;
+        }
+        input {
+          padding: 5px 10px;
+          border: 1px solid #dfdfdf;
+          border-radius: 3px;
+        }
+      }
+      .form-submit {
+        // submit button and password reset link
+        margin-top: 20px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+          flex-direction: column-reverse;
+        }
+
+        a {
+          text-decoration: none;
+          width: 50%;
+          font-weight: 400;
+          color: $dgray;
+          font-size: 14px;
+          @media screen and (max-width: 768px) {
+            margin-top: 10px;
+            text-align: center;
+          }
+        }
+
+        button {
+          width: 50%;
+          border-radius: 3px;
+          color: white;
+          background-color: $dgray;
+          border: none;
+          font-weight: bold;
+          cursor: pointer;
+          @media screen and (max-width: 768px) {
+            // stretch the button to 100% width on mobile
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .register-cta {
+    // container for the register CTA
+    box-sizing: border-box;
+    padding: 0 40px 0 40px;
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+      color: #000;
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #000;
+    }
+    button {
+      width: 80%;
+      border-radius: 3px;
+      color: white;
+      background-color: $dgray;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Media-query */

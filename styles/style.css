@@ -1,15 +1,6 @@
 /* Root & Import */
-
-:root {
-  --lgray: #9e9d9d;
-  --dgray: #5e5e5e;
-  --awhite: #ebebeb;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 /* Body */
-
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -21,9 +12,8 @@ body {
 }
 
 /* General classes */
-
 .bg-dark {
-  background-color: var(--dgray);
+  background-color: #5e5e5e;
 }
 
 .bg-dark > * {
@@ -31,73 +21,209 @@ body {
 }
 
 .bg-light {
-  background-color: var(--lgray);
+  background-color: #cecdcd;
 }
+
 .bg-light > * {
   color: #000 !important;
 }
 
 /* Navbar */
-
-nav {
+#Nav-main {
   max-width: 100%;
-  background-color: var(--lgray);
+  background-color: #cecdcd;
   padding: 0 100px 0 100px;
+  border-bottom: 1px solid #cecdcd;
 }
-
-nav ul {
+#Nav-main ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
-.nav-content {
+#Nav-main .nav-content {
   display: flex;
   justify-content: space-between;
-  background-color: var(--awhite);
+  background-color: #ebebeb;
 }
-
-nav li {
+#Nav-main li {
   padding: 10px 20px 10px 20px;
 }
-
-nav a {
+#Nav-main a {
   text-decoration: none;
-  color: var(--dgray);
+  color: #5e5e5e;
 }
 
 /* Breadcrumbs */
-
 .breadcrumb {
-  background-color: var(--awhite);
+  background-color: #ebebeb;
 }
-
 .breadcrumb ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  color: var(--dgray);
+  color: #5e5e5e;
 }
 
 .breadcrumb-content {
   padding: 0 80px 0 80px;
 }
-
 .breadcrumb-content ul li + li:before {
-  padding: 3px;
-  color: var(--dgray);
+  padding: 0 3px;
+  color: #5e5e5e;
   content: "/";
 }
-
 .breadcrumb-content a {
   color: #5a92c8;
 }
 
-/* Media-query */
-
-@media only screen and (max-width: 750px) {
-  nav {
+/* Login section */
+#Login {
+  margin: 100px 80px 100px 80px;
+}
+#Login button {
+  padding: 10px 10px;
+}
+#Login h1 {
+  position: relative;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  color: #000;
+}
+#Login p {
+  margin: 0;
+  font-size: 16px;
+  color: #000;
+}
+#Login h1:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #046db2;
+  bottom: 5px;
+  z-index: -1;
+}
+#Login .login-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  background: #fafafa;
+  border: 1px solid #dfdfdf;
+  width: 100%;
+  flex-direction: row;
+}
+@media screen and (max-width: 768px) {
+  #Login .login-container {
+    flex-direction: column;
   }
 }
+#Login .login-container form {
+  box-sizing: border-box;
+  padding: 20px;
+  width: 60%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  #Login .login-container form {
+    width: 100%;
+  }
+}
+#Login .login-container form .form-group {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#Login .login-container form .form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+#Login .login-container form .form-group input {
+  padding: 5px 10px;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+}
+#Login .login-container form .form-submit {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  #Login .login-container form .form-submit {
+    flex-direction: column-reverse;
+  }
+}
+#Login .login-container form .form-submit a {
+  text-decoration: none;
+  width: 50%;
+  font-weight: 400;
+  color: #5e5e5e;
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  #Login .login-container form .form-submit a {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+#Login .login-container form .form-submit button {
+  width: 50%;
+  border-radius: 3px;
+  color: white;
+  background-color: #5e5e5e;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  #Login .login-container form .form-submit button {
+    width: 100%;
+  }
+}
+#Login .register-cta {
+  box-sizing: border-box;
+  padding: 0 40px 0 40px;
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  #Login .register-cta {
+    width: 100%;
+  }
+}
+#Login .register-cta h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+}
+#Login .register-cta p {
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+}
+#Login .register-cta button {
+  width: 80%;
+  border-radius: 3px;
+  color: white;
+  background-color: #5e5e5e;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  #Login .register-cta button {
+    width: 100%;
+  }
+}
+
+/* Media-query *//*# sourceMappingURL=style.css.map */

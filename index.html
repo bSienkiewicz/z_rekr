@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <nav>
+    <nav id="Nav-main">
       <div class="nav-content">
         <div class="nav-items">
           <div class="nav-links">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </nav>
-    <div class="breadcrumb">
+    <div class="breadcrumb container">
       <div class="breadcrumb-content">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -35,5 +35,33 @@
         </ul>
       </div>
     </div>
+    <section id="Login" class="container">
+      <h1>Login</h1>
+      <p>To access your account</p>
+      <div class="login-container">
+        <form>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="Username" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="Email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="Password" />
+          </div>
+          <div class="form-submit">
+            <a href="">Forgot Password?</a>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+        <div class="register-cta">
+          <p>Not a member?</p>
+          <button>Register today</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
