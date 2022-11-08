@@ -71,13 +71,6 @@ body {
     margin: 0;
     padding: 0;
   }
-  .nav-items {
-    a {
-      &:hover {
-        background-color: $lgray;
-      }
-    }
-  }
   .nav-content {
     display: flex;
     justify-content: space-between;
@@ -85,6 +78,10 @@ body {
   }
   li {
     padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+    &:hover {
+      cursor: pointer;
+      background-color: $lgray;
+    }
   }
   a {
     text-decoration: none;

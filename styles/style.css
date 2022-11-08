@@ -70,9 +70,6 @@ body {
   margin: 0;
   padding: 0;
 }
-#Nav-main .nav-items a:hover {
-  background-color: #cecdcd;
-}
 #Nav-main .nav-content {
   display: flex;
   justify-content: space-between;
@@ -80,6 +77,10 @@ body {
 }
 #Nav-main li {
   padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+}
+#Nav-main li:hover {
+  cursor: pointer;
+  background-color: #cecdcd;
 }
 #Nav-main a {
   text-decoration: none;
