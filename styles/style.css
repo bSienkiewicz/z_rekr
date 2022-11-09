@@ -64,23 +64,28 @@ body {
     padding: 0px 0px 0 0px;
   }
 }
-#Nav-main ul {
+#Nav-main .nav-items,
+#Nav-main .nav-user {
   display: flex;
   list-style: none;
+}
+#Nav-main .nav-items > a,
+#Nav-main .nav-user > a {
+  padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+}
+#Nav-main .nav-items > a:hover,
+#Nav-main .nav-user > a:hover {
+  background-color: #5e5e5e;
+  color: white;
+}
+#Nav-main .nav-items a > p,
+#Nav-main .nav-user a > p {
   margin: 0;
-  padding: 0;
 }
 #Nav-main .nav-content {
   display: flex;
   justify-content: space-between;
   background-color: #ebebeb;
-}
-#Nav-main li {
-  padding: 0.6rem 1.5rem 0.6rem 1.5rem;
-}
-#Nav-main li:hover {
-  cursor: pointer;
-  background-color: #cecdcd;
 }
 #Nav-main a {
   text-decoration: none;

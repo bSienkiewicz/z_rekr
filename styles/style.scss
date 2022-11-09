@@ -65,23 +65,26 @@ body {
     padding: 0px 00px 0 00px;
   }
 
-  ul {
+  .nav-items,
+  .nav-user {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    & > a {
+      padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+      &:hover {
+        background-color: $dgray;
+        color: white;
+      }
+    }
+    a > p {
+      margin: 0;
+    }
   }
+
   .nav-content {
     display: flex;
     justify-content: space-between;
     background-color: $awhite;
-  }
-  li {
-    padding: 0.6rem 1.5rem 0.6rem 1.5rem;
-    &:hover {
-      cursor: pointer;
-      background-color: $lgray;
-    }
   }
   a {
     text-decoration: none;
